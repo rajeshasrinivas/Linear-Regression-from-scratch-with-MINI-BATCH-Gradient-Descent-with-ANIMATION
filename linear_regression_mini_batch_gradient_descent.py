@@ -41,7 +41,7 @@ x_vals = np.arange(ax.get_xlim()[0],ax.get_xlim()[1],0.01)
 ax.scatter(X,y,s=2)
 ax.set_title('Linear Regression with  Mini Batch Gradient Descent', fontsize = 14)
 for i in range(iter_num):
-    ax.legend(['       Slope B1:= '+ str(round(B1,4)) + '\n' +'Intercept B0 := ' + str(round(B0,4)) ])
+    ax.legend(['    Batch Size:= '+  str(batch_size)+'\n'+ '       Slope B1:= '+ str(round(B1,4)) + '\n' +' Intercept B0:= ' + str(round(B0,4)) ])
     B1, B0 = mini_batch_gradient_descent(X,y,alpha,B1,B0,batch_size)
     y_vals = x_vals*B1 + B0
     plt_obj = ax.scatter(x_vals,y_vals,marker = 'x',c = 'C1',s = 1)
